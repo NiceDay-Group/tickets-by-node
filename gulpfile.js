@@ -1,6 +1,11 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
 var mocha = require('gulp-mocha');
+var jsValidate = require('gulp-jsvalidate');
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+
+const projectFiles = ['./index.js', './lib/**/*.js', './test/**/*.js'];
 
 gulp.task('nodemon', () => {
   nodemon({
@@ -17,6 +22,17 @@ gulp.task('test', () => {
     .pipe(mocha({
         require: ['./test/bootstrap/chai.js']
       }))
+});
+
+gulp.task('validate', function () {
+  return gulp.src(projectFiles)
+      .pipe(jsValidate());
+});
+
+gulp.task('lint', function() {
+  return gulp.src(projectFiles)
+      .pipe(jshint())
+      .pipe(jshint.reporter(stylish));
 });
 
 gulp.task('default', () => {
