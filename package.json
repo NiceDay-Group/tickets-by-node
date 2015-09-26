@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp nodemon",
-    "test": "gulp test"
+    "test": "gulp test",
+    "precommit": "gulp precommit"
   },
   "pre-commit": [
-    "gulp precommit"
-  ],
-  "pre-post": [
-    "npm test"
+    "precommit",
+    "test"
   ],
   "repository": {
     "type": "git",
