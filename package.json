@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "gulp nodemon",
     "test": "echo \"No test specified\""
   },
   "repository": {
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "chai": "^3.3.0",
-    "gulp-mocha": "^2.1.3"
+    "gulp-mocha": "^2.1.3",
+    "gulp-nodemon": "^2.0.4"
   }
 }
