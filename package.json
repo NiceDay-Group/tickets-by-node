@@ -19,5 +19,8 @@
   "homepage": "https://github.com/NiceDay-Group/tickets-by-node#readme",
   "engines": {
     "node": "4.0.x"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }
