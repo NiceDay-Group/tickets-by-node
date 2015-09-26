@@ -7,6 +7,12 @@
     "start": "gulp nodemon",
     "test": "gulp test"
   },
+  "pre-commit": [
+    "gulp precommit"
+  ],
+  "pre-post": [
+    "npm test"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NiceDay-Group/tickets-by-node.git"
@@ -31,6 +37,7 @@
     "gulp-jsvalidate": "^2.0.0",
     "gulp-mocha": "^2.1.3",
     "gulp-nodemon": "^2.0.4",
-    "jshint-stylish": "^2.0.1"
+    "jshint-stylish": "^2.0.1",
+    "pre-commit": "^1.1.1"
   }
 }

@@ -8,6 +8,10 @@ var jscs = require('gulp-jscs');
 
 const projectFiles = ['**/*.js', '!node_modules/**/*'];
 
+gulp.task('default', () => {
+  console.log('Gulp is running');
+});
+
 gulp.task('nodemon', () => {
   nodemon({
     script: 'index.js',
@@ -24,6 +28,8 @@ gulp.task('test', () => {
         require: ['./test/bootstrap/chai.js'],
       }));
 });
+
+gulp.task('precommit', ['validate', 'lint', 'jscs']);
 
 gulp.task('validate', function() {
   return gulp.src(projectFiles)
@@ -46,8 +52,4 @@ gulp.task('jscs:format', () => {
   return gulp.src(projectFiles)
       .pipe(jscs({fix: true}))
       .pipe(gulp.dest('./'));
-});
-
-gulp.task('default', () => {
-  console.log('Gulp is running');
 });
