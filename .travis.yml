@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-  "4.0"
+node_js: '4.0'
 deploy:
   provider: heroku
   api_key:
@@ -8,3 +7,6 @@ deploy:
   app: tickets-by-node
   on:
     repo: NiceDay-Group/tickets-by-node
+notifications:
+  slack:
+    secure: F55aj4rgg1PsUr/AWO2seD7iSZ5cxwA3x6XehF8bp4KSsfh/9SlVCWcjRp3whkRL4Ul722WvEd1cZuulHZO4LqSJ3OqiujEAxRRDiVJrShS858OPUWgivHULQ3xGw0mh4vCCpcFfP1RDqX/MtmVshe5wkpUKg7Wm4ITofFNpj3wFaNC7/+3n8qfi2mv5p6eUQhcRKFRsd6fUMtLC1HbmkGgEv2lmZPFke76UF1YxyDrEESZsYYHCfsJioKKCKRnnsDFEPQ/sQpA2EgoB5Nu7cR41VGZHzbuLcnaaToGuKTseLEswhGov+ZUjWhGH6XWnAovV2jumWRlr619KNJLlT3V2kv9MrDypSZZneLNAp4N0Ki0GEjhiBAy9FQ2EpB2vyIhuXQ15R89Ursz+XknlaZrQVgXDvG+8h2IfVdadWQZ51LDSefjiR93WlfJHMnluMjRAI4JBsxYOZp7gbvKUKR50LaKoEmgGA9ESgJSqCE+AsdzXN6EKP+SnyvDyCmgug0wqvIM5i5b6qSwo3N5VkA+Ylukn8aQFHa3Jx1+aiWaDCmHZNQTNLVtvGMepMmfyvbbHyu/6fG578ZNS/Z/MmQ8bBt+81x0n6yP2zSOeJlXBi76KmSSHJquDyYnnw4qyhW9dLecNq38Q4Q34982IypuA0+KSqajtVi7CqW68izw=
