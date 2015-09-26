@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "express": "^4.13.3",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-jscs": "^3.0.0"
   },
   "devDependencies": {
     "chai": "^3.3.0",
