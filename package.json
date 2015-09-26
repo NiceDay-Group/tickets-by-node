@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp nodemon",
+    "start": "node index.js",
     "test": "gulp test",
     "precommit": "gulp precommit"
   },
@@ -28,7 +28,8 @@
   "dependencies": {
     "express": "^4.13.3",
     "gulp": "^3.9.0",
-    "gulp-jscs": "^3.0.0"
+    "gulp-jscs": "^3.0.0",
+    "le_node": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^3.3.0",
