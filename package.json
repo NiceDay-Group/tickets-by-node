@@ -1,0 +1,23 @@
+{
+  "name": "tickets-by-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiceDay-Group/tickets-by-node.git"
+  },
+  "author": "Aleksey Krasikov <alekseykrasikov.hk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiceDay-Group/tickets-by-node/issues"
+  },
+  "homepage": "https://github.com/NiceDay-Group/tickets-by-node#readme",
+  "engines": {
+    "node": "4.0.x"
+  }
+}
