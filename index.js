@@ -1,14 +1,14 @@
 'use strict';
 
 var express = require('express');
+var config = require('./config');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('Welcome to Tickets.by');
 });
 
-app.listen(port, () => {
-  console.log('Node app is running on port', port);
+app.listen(config.port, () => {
+  console.log('Node app is running on port', config.port);
 });
