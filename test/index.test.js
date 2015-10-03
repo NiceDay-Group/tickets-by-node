@@ -1,3 +1,5 @@
+'use strict';
+
 /* global describe, it, expect */
 
 describe('Test', () => {
