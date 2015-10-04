@@ -3,7 +3,8 @@
 var express = require('express');
 var config = require('./config');
 var mongoose = require('mongoose');
-require('mongoose-type-email');
+var mongooseTypes = require('mongoose-types');
+mongooseTypes.loadTypes(mongoose, 'email');
 
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
@@ -18,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/tickets');
 const app = express();
 
 app.use(cookieParser());
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -33,7 +34,11 @@ passport.deserializeUser(function(id, done) {
 passport.use('local-signup', localSignUpStrategy);
 passport.use('local-signin', localSignInStrategy);
 
-app.use(session({ secret: 'secret' }));
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
