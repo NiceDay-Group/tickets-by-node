@@ -67,6 +67,11 @@ app.post('/signup',
   }
 );
 
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.send(200);
+});
+
 app.post('/signin',
   passport.authenticate('local-signin'),
   function(req, res) {
