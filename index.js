@@ -3,8 +3,9 @@
 var express = require('express');
 var config = require('./config');
 var mongoose = require('mongoose');
+require('mongoose-type-email');
 
-mongoose.connect('mongodb://localhost:27017/');
+mongoose.connect('mongodb://localhost:27017/tickets');
 
 const app = express();
 
