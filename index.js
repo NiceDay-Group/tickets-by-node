@@ -26,7 +26,7 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, user) {
+  User.findById(id, function(err, user) {
     done(err, user);
   });
 });
@@ -62,7 +62,7 @@ app.post('/signup',
   passport.authenticate('local-signup'),
   function(req, res) {
     res.json({
-      user: req.user
+      user: req.user,
     });
   }
 );
@@ -71,7 +71,7 @@ app.post('/signin',
   passport.authenticate('local-signin'),
   function(req, res) {
     res.json({
-      user: req.user
+      user: req.user,
     });
   }
 );
