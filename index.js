@@ -14,7 +14,7 @@ var User = require('./lib/models/User');
 var localSignUpStrategy = require('./lib/strategies/localSignUpStrategy');
 var localSignInStrategy = require('./lib/strategies/localSignInStrategy');
 
-mongoose.connect('mongodb://localhost:27017/tickets');
+mongoose.connect(config.mongoUrl);
 
 const app = express();
 
