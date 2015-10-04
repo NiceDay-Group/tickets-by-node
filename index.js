@@ -42,8 +42,20 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+
+  next(new Error(401));
+}
+
 app.get('/', (req, res) => {
   res.send('Welcome to Tickets.by');
+});
+
+app.get('/protected', isLoggedIn, (req, res) => {
+  res.json({message: 'Have access'});
 });
 
 app.post('/signup',
