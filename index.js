@@ -11,8 +11,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var User = require('./lib/models/User');
-var localSignUpStrategy = require('./lib/strategies/localSignUpStrategy');
-var localSignInStrategy = require('./lib/strategies/localSignInStrategy');
+var localSignUpStrategy = require('./lib/strategies/localSignUp');
+var localSignInStrategy = require('./lib/strategies/localSignIn');
 
 mongoose.connect(config.mongoUrl);
 
