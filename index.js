@@ -41,6 +41,24 @@ app.get('/', (req, res) => {
   res.send('Welcome to Tickets.by');
 });
 
+app.post('/signup',
+  passport.authenticate('local-signup'),
+  function(req, res) {
+    res.json({
+      user: req.user
+    });
+  }
+);
+
+app.post('/signin',
+  passport.authenticate('local-signin'),
+  function(req, res) {
+    res.json({
+      user: req.user
+    });
+  }
+);
+
 app.listen(config.port, () => {
   console.log('Node app is running on port', config.port);
 });
