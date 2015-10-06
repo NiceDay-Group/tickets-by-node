@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var cors = require('cors');
 var config = require('./config');
 var mongoose = require('mongoose');
 var mongooseTypes = require('mongoose-types');
@@ -17,6 +18,11 @@ var localSignInStrategy = require('./lib/strategies/localSignIn');
 mongoose.connect(config.mongoUrl);
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:4200',
+  credentials: true
+}));
 
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -36,6 +42,9 @@ passport.use('local-signin', localSignInStrategy);
 
 app.use(session({
   secret: 'secret',
+  cookie: {
+    maxage: 3600000
+  },
   resave: false,
   saveUninitialized: true,
 }));
@@ -71,6 +80,14 @@ app.get('/logout', function(req, res) {
   req.logout();
   res.send(200);
 });
+
+app.get('/isLogged', function(req, res) {
+  if (req.user) {
+    res.json(req.user);
+  } else {
+    res.send(401);
+  }
+})
 
 app.post('/signin',
   passport.authenticate('local-signin'),
