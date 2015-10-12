@@ -2,7 +2,6 @@
 
 var app = require('./lib/init/app');
 var mongoose = require('./lib/init/mongoose');
-var passport = require('./lib/init/passport');
 
 mongoose.connect(config.mongoUrl);
 
