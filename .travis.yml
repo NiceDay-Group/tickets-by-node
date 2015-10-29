@@ -11,6 +11,7 @@ deploy:
   region: eu-central-1
   app: tickets
   env: tickets-dev-env
+  bucket_name: elasticbeanstalk-eu-central-1-380538877013
   on:
     repo: mr-deer/tickets-node
     branch: deploy-node-app-to-aws
