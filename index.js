@@ -6,7 +6,8 @@ var passport = require('./lib/init/passport');
 var errorHandler = require('./lib/init/errorHandler');
 var config = require('./config');
 
-mongoose.connect(config.mongoUrl);
+var connection = mongoose.connect(config.mongoUrl);
+mongoose.autoIncrement.initialize(connection);
 
 app.use(passport.initialize());
 app.use(passport.session());
